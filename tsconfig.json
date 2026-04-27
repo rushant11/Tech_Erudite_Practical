@@ -1,8 +1,27 @@
 {
   "extends": "@react-native/typescript-config",
   "compilerOptions": {
-    "types": ["jest"]
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+    "baseUrl": ".",
+    "paths": {
+      "@screens/Splash": ["src/screens/auth/Splash/index"],
+      "@screens/Login": ["src/screens/auth/Login/index"],
+      "@screens/Search": ["src/screens/main/Search/index"],
+      "@screens/Events": ["src/screens/main/Events/index"],
+      "@screens/Favourites": ["src/screens/main/Favourites/index"],
+      "@screens/Profile": ["src/screens/main/Profile/index"],
+      "@utils/*": ["src/utils/*"],
+      "@components/*": ["src/component/*"],
+      "@navigation/*": ["src/navigation/*"],
+      "@theme/*": ["src/theme/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@redux/*": ["src/redux/*"],
+      "@store/*": ["src/store/*"],
+      "@features/*": ["src/features/*"],
+      "@services/*": ["src/services/*"],
+      "@assets/*": ["src/assets/*"],
+      "@api/*": ["src/api/*"],
+      "@skeletons": ["src/skeletons/index"],
+      "@skeletons/*": ["src/skeletons/*"]
+    }
+  }
 }
