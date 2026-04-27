@@ -114,14 +114,14 @@ const LoginScreen = ({navigation}: Props) => {
           style={styles.signInBtn}
         />
 
-        <View style={styles.signUpRow}>
+        {/* <View style={styles.signUpRow}>
           <AppText variant="bodySmall">Not a member? </AppText>
           <TouchableOpacity activeOpacity={0.7}>
             <AppText variant="link">Sign Up Here</AppText>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
-        <View style={styles.dividerRow}>
+        {/* <View style={styles.dividerRow}>
           <View style={styles.dividerLine} />
           <AppText variant="caption" style={styles.dividerLabel}>
             or Sign In with:
@@ -145,7 +145,7 @@ const LoginScreen = ({navigation}: Props) => {
           <AppText variant="bodySmall" style={styles.guestText}>
             Enter as Guest
           </AppText>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -168,7 +168,6 @@ const styles = StyleSheet.create({
     marginTop: ds(48),
     marginBottom: ds(28),
     letterSpacing: 1.5,
-    fontStyle: 'italic',
   },
   imagePlaceholder: {
     width: ds(140),
