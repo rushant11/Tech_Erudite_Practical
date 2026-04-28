@@ -114,7 +114,18 @@ case "$( uname )" in                #(
   NONSTOP* )        nonstop=true ;;
 esac
 
-
+# macOS: AGP needs a JDK with jlink. Editor extensions may set JAVA_HOME to a JRE that has no
+# jlink. Prefer Android Studio's JBR when current JAVA_HOME is unusable for Gradle/AGP.
+if [ "$darwin" = "true" ]; then
+    _jbr_default="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+    if [ -n "$JAVA_HOME" ] && [ ! -x "$JAVA_HOME/bin/jlink" ] && [ -x "$_jbr_default/bin/jlink" ]; then
+        JAVA_HOME="$_jbr_default"
+        export JAVA_HOME
+    elif [ -z "$JAVA_HOME" ] && [ -x "$_jbr_default/bin/jlink" ]; then
+        JAVA_HOME="$_jbr_default"
+        export JAVA_HOME
+    fi
+fi
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
